@@ -3,17 +3,13 @@ import 'package:beauty_soft/componentes_reutilizables/boton.dart';
 import 'package:beauty_soft/login_registro/login.dart';
 import 'package:beauty_soft/login_registro/registro.dart';
 
-class PaginaInicio extends StatelessWidget{
-  const PaginaInicio({
-    super.key,
-    this.pagina
-  });
+class PaginaInicio extends StatelessWidget {
+  const PaginaInicio({super.key, this.pagina});
 
   final void Function(Widget pagina)? pagina;
 
-
   @override
-  Widget build(context){
+  Widget build(context) {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -26,37 +22,51 @@ class PaginaInicio extends StatelessWidget{
         ),
       ),
       child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              'assets/images/logo_beautysoft.png',
-              width: 200,
+          child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            'assets/images/logo_beautysoft.png',
+            width: 200,
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          const Text(
+            'Beauty Soft',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(
-              height: 30,
-            ),
-            const Text('Beauty Soft',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
+          ),
+          const SizedBox(
+            height: 60,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BotonUno(
+                texto: "Iniciar Sesión",
+                funcion: pagina,
+                pagina: Login(
+                  cambiarPagina: pagina,
+                ),
               ),
-            ),
-            SizedBox(
-              height: 60,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                BotonUno(texto: "Iniciar Sesión", funcion: pagina, pagina: Login(cambiarPagina: pagina,),),
-                SizedBox(width: 20,),
-                BotonUno(texto: "Registrarse", funcion:pagina, pagina: Registro(cambiarPagina: pagina,),),
-              ],
-            ),
-          ],
-        )
-      ),
+              const SizedBox(
+                width: 20,
+              ),
+              BotonUno(
+                texto: "Registrarse",
+                funcion: pagina,
+                pagina: Registro(
+                  cambiarPagina: pagina,
+                ),
+              ),
+            ],
+          ),
+        ],
+      )),
     );
   }
 }

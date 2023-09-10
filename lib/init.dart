@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:beauty_soft/pagina_inicio/paginaInicio.dart';
-import 'package:beauty_soft/login_registro/login.dart';
-import 'package:beauty_soft/home/home.dart';
 
-class Init extends StatefulWidget{
+class Init extends StatefulWidget {
   const Init({super.key});
 
   @override
-  State<Init> createState(){
+  State<Init> createState() {
     return _InitState();
   }
 }
 
 class _InitState extends State<Init> {
-  @override
   Widget? paginaActual;
 
   @override
   void initState() {
-    paginaActual = PaginaInicio(pagina: cambioDePagina,);
+    paginaActual = PaginaInicio(
+      pagina: cambioDePagina,
+    );
     super.initState;
   }
 
@@ -27,14 +26,14 @@ class _InitState extends State<Init> {
   //recibe un widget
   //en caso de ser una página con más de una redireccion se puede
   // escoger a cual de todas ir con el selector
-  void cambioDePagina(Widget pagina){
+  void cambioDePagina(Widget pagina) {
     setState(() {
       paginaActual = pagina;
     });
   }
 
   @override
-  Widget build(context){
+  Widget build(context) {
     return MaterialApp(
       home: Scaffold(
         body: Container(

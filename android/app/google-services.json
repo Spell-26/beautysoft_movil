@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "671209975748",
+    "project_id": "beautysoft-1fa47",
+    "storage_bucket": "beautysoft-1fa47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671209975748:android:90c0d7f43756035140fe91",
+        "android_client_info": {
+          "package_name": "com.example.beauty_soft"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0uLwwlrNhPVHrmGpHxq9Jb-3PRMzmqF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

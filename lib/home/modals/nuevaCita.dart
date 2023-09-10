@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
+class NuevaCita extends StatefulWidget {
+  const NuevaCita({super.key});
 
-class NuevaCita extends StatefulWidget{
   @override
-  State<NuevaCita> createState(){
+  State<NuevaCita> createState() {
     return _NuevaCitaState();
   }
 }
 
-class _NuevaCitaState extends State<NuevaCita>{
+class _NuevaCitaState extends State<NuevaCita> {
   // Controladores para los campos del formulario
   final TextEditingController fechaController = TextEditingController();
   final TextEditingController horaController = TextEditingController();
@@ -23,7 +24,7 @@ class _NuevaCitaState extends State<NuevaCita>{
   }
 
   @override
-  Widget build(context){
+  Widget build(context) {
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -42,7 +43,7 @@ class _NuevaCitaState extends State<NuevaCita>{
                 );
                 if (selectedDate != null) {
                   fechaController.text =
-                  "${selectedDate.toLocal()}".split(' ')[0];
+                      "${selectedDate.toLocal()}".split(' ')[0];
                 }
               },
               readOnly: true,
@@ -96,8 +97,12 @@ class _NuevaCitaState extends State<NuevaCita>{
                   selectedOption2 = newValue!;
                 });
               },
-              items: <String>['Corte dama', 'Chocolaterapia', 'Uñas', 'Corte caballero']
-                  .map<DropdownMenuItem<String>>((String value) {
+              items: <String>[
+                'Corte dama',
+                'Chocolaterapia',
+                'Uñas',
+                'Corte caballero'
+              ].map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(value),
@@ -106,17 +111,14 @@ class _NuevaCitaState extends State<NuevaCita>{
             ),
             const SizedBox(height: 16.0),
             ElevatedButton(
-              style:
-              const ButtonStyle(
+              style: const ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll<Color>(Colors.purple),
                 elevation: MaterialStatePropertyAll(8),
               ),
               onPressed: () {
                 //  TODO
               },
-              child: const Text(
-                  'Enviar'
-              ),
+              child: const Text('Enviar'),
             ),
           ],
         ),
@@ -125,12 +127,10 @@ class _NuevaCitaState extends State<NuevaCita>{
   }
 }
 
-void modalNuevaCita(BuildContext context){
+void modalNuevaCita(BuildContext context) {
   showModalBottomSheet(
       context: context,
-      builder: (BuildContext context){
-        return NuevaCita();
-      }
-  );
-
+      builder: (BuildContext context) {
+        return const NuevaCita();
+      });
 }
