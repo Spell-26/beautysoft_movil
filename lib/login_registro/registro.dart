@@ -260,12 +260,25 @@ class _RegistroState extends State<Registro> {
                               onPressed: () {
                                 if (_formKey.currentState!.validate()) {
                                   print("enviando");
+                                  const snackBar = SnackBar(
+                                    backgroundColor:
+                                        Color.fromRGBO(116, 51, 127, 1),
+                                    content: Text('Registro exitoso'),
+                                  );
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(snackBar);
                                   registroUsuario();
                                   widget.cambiarPagina!(PaginaInicio(
                                     pagina: widget.cambiarPagina,
                                   ));
                                 } else {
-                                  print('invalido');
+                                  const snackBar = SnackBar(
+                                    backgroundColor:
+                                        Color.fromRGBO(116, 51, 127, 1),
+                                    content: Text('Registro invalido'),
+                                  );
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(snackBar);
                                 }
                               },
                               child: const Text(
